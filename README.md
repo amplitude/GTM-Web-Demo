@@ -39,11 +39,6 @@ The idea is that when you want to log an event, you push a "logEvent" event to t
 2. Run `node server.js`
 3. In browser, navigate to `http://localhost:9000/amplitudejs-gtm.html`
 
-###
-GTM Web Demo: https://github.com/amplitude/GTM-Web-Demo
-* Setting up GTM:
-* Setting up the handlers: https://github.com/amplitude/GTM-iOS-Demo/blob/master/m2048/M2AppDelegate.m#L20-L34
-* Example of setting userId and userProperties: https://github.com/amplitude/GTM-iOS-Demo/blob/master/m2048/Controller/M2ViewController.m#L40-L43
-* Example of logging an event: https://github.com/amplitude/GTM-iOS-Demo/blob/master/m2048/State/M2GameManager.m#L208-L209
+### Note ###
 
-A lot of the other functionality from the SDK hasn't been implemented (such as logging revenue, user property operations, etc), but this proof of concept demonstrates that GTM integration with Amplitude is possible, and events are being logged with the correct user Ids. Implementing the other functionalities would follow a similar pattern.
+A lot of the other functionality from the SDK hasn't been implemented (such as logging revenue, user property operations, etc), but this proof of concept demonstrates that GTM integration with Amplitude is possible, and events are being logged with the correct user Ids. Implementing the other functionalities would follow a similar pattern. You can customize your integration based on your setup, for example you can have tags triggered by clicks or page views, but the important thing is that you map it to the correct SDK function in the custom HTML.
