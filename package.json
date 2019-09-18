@@ -1,9 +1,12 @@
 {
-  "name": "amplitude-js-GTM-web-demo",
+  "name": "amplitude-js-gtm-web-demo",
   "author": "Amplitude <support@amplitude.com>",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Google Tag Manager Integration Demo for Amplitude Javascript",
+  "scripts": {
+    "start": "node server.js"
+  },
   "keywords": [
     "analytics",
     "amplitude"
