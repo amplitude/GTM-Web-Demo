@@ -1,53 +1,60 @@
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Amplitude JS SDK with Google Tag Manager Demo</title>
+    <!-- Amplitude JS SDK -->
+    <script type="text/javascript">
+      (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script");r.type="text/javascript";
+      r.async=true;r.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-3.0.0-min.gz.js";
+      r.onload=function(){e.amplitude.runQueuedFunctions()};var i=t.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(r,i);function s(e,t){e.prototype[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
+      return this}}var o=function(){this._q=[];return this};var a=["add","append","clearAll","prepend","set","setOnce","unset"];
+      for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[];return this;
+      };var p=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];
+      for(var l=0;l<p.length;l++){s(c,p[l])}n.Revenue=c;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId"];
+      function v(e){function t(t){e[t]=function(){e._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
+      }}for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){e=(!e||e.length===0?"$default_instance":e).toLowerCase();
+      if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]};e.amplitude=n;
+      })(window,document);
 
-<!-- Amplitude JS SDK -->
-<script type="text/javascript">
-  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script");r.type="text/javascript";
-  r.async=true;r.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-3.0.0-min.gz.js";
-  r.onload=function(){e.amplitude.runQueuedFunctions()};var i=t.getElementsByTagName("script")[0];
-  i.parentNode.insertBefore(r,i);function s(e,t){e.prototype[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
-  return this}}var o=function(){this._q=[];return this};var a=["add","append","clearAll","prepend","set","setOnce","unset"];
-  for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[];return this;
-  };var p=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];
-  for(var l=0;l<p.length;l++){s(c,p[l])}n.Revenue=c;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId"];
-  function v(e){function t(t){e[t]=function(){e._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
-  }}for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){e=(!e||e.length===0?"$default_instance":e).toLowerCase();
-  if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]};e.amplitude=n;
-  })(window,document);
+      amplitude.getInstance().init('21e0fe6c98573ae71d209cb8ec4e85eb');
+    </script>
+    <!-- End Amplitude JS SDK -->
 
-  amplitude.getInstance().init('21e0fe6c98573ae71d209cb8ec4e85eb');
-</script>
-<!-- End Amplitude JS SDK -->
+    <!-- Initialize GTM data layer -->
+    <script>
+      dataLayer = [];
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W5V5CW');</script>
+    <!-- End Google Tag Manager -->
 
-<!-- Initialize GTM data layer -->
-<script>
-  dataLayer = [];
-</script>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W5V5CW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5V5CW');</script>
-<!-- End Google Tag Manager -->
+    <script>
+      // setting a user Id
+      dataLayer.push({'event': 'setUserId', 'userId': 'bob@gmail.com'});
 
-<script>
-  // setting a user Id
-  dataLayer.push({'event': 'setUserId', 'userId': 'bob@gmail.com'});
+      // setting user properties
+      dataLayer.push({'event': 'setUserProperties', 'userProperties': {'city': 'San Francisco'}});
 
-  // setting user properties
-  dataLayer.push({'event': 'setUserProperties', 'userProperties': {'city': 'San Francisco'}});
+      // logging an event with event properties
+      dataLayer.push({'event': 'logEvent', 'eventType': 'page load', 'eventProperties': {'url': window.location.href}});
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-W5V5CW&pageCategory=sports&visitorType=returning" height="0"
+        width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-  // logging an event with event properties
-  dataLayer.push({'event': 'logEvent', 'eventType': 'page load', 'eventProperties': {'url': window.location.href}});
-</script>
-<body>
-<h3>Amplitude JS - Google Tag Manager Integration Demo</h3>
+    <h3>Amplitude JS - Google Tag Manager Integration Demo</h3>
 
-<!-- Logging an event on a link click -->
-<a href='#' onClick="javascript:dataLayer.push({'event': 'logEvent', 'eventType': 'clicked link', 'eventProperties':null})">Link</a>
-
-</body>
+    <!-- Logging an event on a link click -->
+    <a href='#' onClick="javascript:dataLayer.push({'event': 'logEvent', 'eventType': 'clicked link', 'eventProperties':null})">Link</a>
+  </body>
 </html>
