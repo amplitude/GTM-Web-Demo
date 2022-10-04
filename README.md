@@ -1,9 +1,13 @@
 Demo App - Amplitude JS SDK with Google Tag Manager
 ================
 
-GTM integration on web requires installing our [Javascript SDK](https://github.com/amplitude/amplitude-javascript#setup), and then setting up GTM to trigger SDK functions using custom HTML tags. This demo apps is a proof of concept, with just the 3 most important functionalities implemented (logging events, setting user Id, and setting user properties). Here is our GTM container setup:
+GTM integration on web requires installing our [Javascript SDK](https://github.com/amplitude/amplitude-javascript#setup), and then setting up GTM to trigger SDK functions using custom HTML tags. This demo apps is a proof of concept, with just the 3 most important functionalities implemented (logging events, setting user Id, and setting user properties).
 
-**Note**: Make sure to put the Amplitude JS load snippet and initialize with your API key on every page before you load the Google Tag Manager script.
+Refer to [Introducing the Amplitude Google Tag Manager (GTM) Template](https://amplitude.com/blog/google-tag-manager-template/) for more guidance.
+
+**Note**:
+- Make sure to put the Amplitude JS load snippet and initialize with your API key on every page before you load the Google Tag Manager script.
+- It is always suggested to have a custom instance name to avoid naming collision.
 
 ### User-Defined Variables (all Data Layer Variables): ###
 * eventProperties
